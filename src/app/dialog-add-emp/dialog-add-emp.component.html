@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>Add new Employee</h1>
+<div mat-dialog-content>
+  Add new Emp here!
+
+  <div class="formContainer">
+      <mat-form-field appearance="outline">
+    <mat-label>First name</mat-label>
+    <input [(ngModel)]="emp.firstName" matInput placeholder="Placeholder">
+    <mat-hint>First name</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Last name</mat-label>
+    <input [(ngModel)]="emp.lastName" matInput placeholder="Placeholder">
+    <mat-hint>Last name</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input [(ngModel)]="emp.email" matInput placeholder="Placeholder">
+    <mat-hint>Email</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>ID</mat-label>
+    <input [(ngModel)]="emp.id" matInput placeholder="Placeholder">
+    <mat-hint>ID</mat-hint>
+  </mat-form-field>
+
+  </div>
+
+  
+
+ 
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button >Cancel</button>
+  <button mat-button cdkFocusInitial (click)="saveEmp()">Save</button>
+</div>
+

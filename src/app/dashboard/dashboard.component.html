@@ -1,0 +1,53 @@
+
+<input id="filterInput" type="text">
+<button (click)="showFilter()">filter emp</button>
+<button (click)="resetFilter()">
+  reset filter
+</button>
+
+
+<mat-card>
+  <table id="empTable">
+    <tr>
+       <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>ID</th>
+  
+    </tr>
+    <ng-container *ngIf="!filterd">
+       <tr *ngFor="let emp of this.empService.allEmployees;let index=index">
+      <td>{{emp['firstName']}}</td>
+      <td>{{emp['lastName']}}</td>
+      <td>{{emp['email']}}</td>
+      <td>{{emp['id']}}</td>
+      <td>
+       
+      </td>
+    </tr>
+    </ng-container>
+    <tr *ngIf="filterd">
+      <td>
+        {{this.empService.filterdEmp['firstName']}}
+      </td>
+      <td>
+        {{this.empService.filterdEmp['lastName']}}
+      </td>
+      <td>
+        {{this.empService.filterdEmp['email']}}
+      </td>
+      <td>
+        {{this.empService.filterdEmp['id']}}
+      </td>
+
+     
+      </tr>
+   
+  </table>
+</mat-card>
+
+
+<button (click)="openDialog()" id="addEmpBtn" mat-fab color="primary" 
+aria-label="Example icon button with a delete icon" matTooltip="Add new employee">
+    <mat-icon>add</mat-icon>
+  </button>

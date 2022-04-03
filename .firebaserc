@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "employeeregister-74280": {
+      "hosting": {
+        "employeeRegister": [
+          "employeeregister-74280"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "employeeregister-74280"
+  }
+}
