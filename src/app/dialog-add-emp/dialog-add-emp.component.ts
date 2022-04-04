@@ -31,10 +31,16 @@ export class DialogAddEmpComponent implements OnInit {
 
   saveEmp(){
     console.log('new employee', this.emp);
-   let newEmp = this.emp.toJSON();
-
+    let inputValue = +(<HTMLInputElement>document.getElementById('idInput')).value;
+    if (this.empService.isIdPresent(inputValue)){
+      alert('Employee ID already taken, please choose another one.')
+    }
+    else {
+      let newEmp = this.emp.toJSON();
+    
     this.empService.saveEmp(newEmp);
     this.dialogRef.close();
+    }
   }
 
 }

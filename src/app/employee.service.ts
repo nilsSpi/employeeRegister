@@ -45,4 +45,15 @@ export class EmployeeService {
        }
      })
    }
+
+   isIdPresent(id:number): boolean{
+     let statment = false
+    this.allEmployees.forEach((e)=>{
+      if(e['id'] == id){
+        statment = true;
+      }
+     
+    })
+    return statment;
+   }
 }
